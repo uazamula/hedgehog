@@ -1,8 +1,64 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <title>Hedgehog</title>
-  </head>
-  <body>
-  </body>
+    <head>
+        <title>Game</title>
+        <link rel="stylesheet" href="styles.css">  
+        <script type="text/javascript" src="code.js" defer>
+
+        </script>    
+
+    </head>
+    <body>
+        <div>
+            <div id="wrapper">
+                <div id="cmdList">
+                    <button onclick="onBtnFw(event,'')"id="btnFw">Вперед</button><br>
+                    <button onclick="onBtnFw(event,'')"id="btnLeft">Повернути вліво</button><br>
+                    <button onclick="onBtnFw(event,'')"id="btnRight">Повернути вправо</button>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Повторити</button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="#home" class="repeat">2</a>
+                          <a href="#about" class="repeat">3</a>
+                          <a href="#contact" class="repeat">4</a>
+                        </div>
+                    </div>
+                    <button onclick="onBtnFw(event,'')"id="btnEndBlock">Кінець блоку</button>
+
+                </div>
+
+                <div id="codeList">
+                
+                </div>
+                <div id="dashBoard">
+                    <button onclick="menu()">Menu</button>
+                    <button onclick="myMove()">Run</button>
+                    <button onclick="deleteCommand()">Delete</button>
+                    <button onclick="clearAll()">Clear All</button>
+                    <h2 id="level"></h2>
+                </div>    
+
+                <div id="gameField">
+                    <div id = "gridContainer" >
+                        <div class="grid-item"><img id="hh" class="hedgehog" src="images/hedgehog_small.png">1</div>
+                        <div class="grid-item">2</div>
+                        <div class="grid-item">3</div>
+                        <div class="grid-item">4</div>
+                        <div class="grid-item">5</div>
+                        <div class="grid-item">6</div>
+                        <div class="grid-item">7</div>
+                        <div class="grid-item">8</div>
+                        <div class="grid-item">9</div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu">
+                <h1>Hedgehog</h1>
+                <button class="levelBtn">Level 1</button><br>
+                <button class="levelBtn">Level 2</button><br>
+            </div>
+        </div>
+        
+
+    </body>
 </html>
