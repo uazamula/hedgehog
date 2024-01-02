@@ -13,7 +13,7 @@ const REPEAT = "Повторити";
 const ENDBLOCK = "Кінець блоку";
 const settings= [
   {'solution':[FW,FW,RIGHT,FW],
-  'squares': [4,5,6,9],
+  'squares': [1,2,3,6],
   'startAt': 4,
    'degrees':'0deg'},
   {'solution':[REPEAT+' 2',FW,RIGHT,FW,LEFT,ENDBLOCK],
