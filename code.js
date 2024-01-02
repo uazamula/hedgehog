@@ -180,6 +180,7 @@ function myMove() {
     let startBlockIndex=[-1,-1];
     let countRepeat=0;
     let countEndBlock=0;
+    let maxLoopLevel=0;
 
     const delay = 400
 
@@ -244,8 +245,10 @@ function myMove() {
             countRepeat++
           } else{
             loop[1]=command.slice(-1);
-            startBlockIndex[1]=index;        
-            
+            startBlockIndex[1]=index;            
+          }
+            if (maxLoopLevel<2){
+            maxLoopLevel++
           }
         }
         index++;
@@ -257,12 +260,13 @@ function myMove() {
             countEndBlock=0;
           } else{
             countEndBlock++
-            if(countEndBlock>1){
+            if(countEndBlock>=maxLoopLevel){
               if (loop[0]>1){
                 loop[0]--
                 index= startBlockIndex[0]+1;
               }else{
                 countRepeat=0;
+                maxLoopLevel=0;
               }
               countEndBlock=0;
             }
