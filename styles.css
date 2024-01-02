@@ -1,0 +1,127 @@
+body{
+    width: 1000px;
+}
+#wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    max-width: 1000px;    
+    display: none;
+
+}
+#menu{
+}
+
+#cmdList{
+    top:0;
+    vertical-align: top;
+    background-color:green;
+    width: 150px;
+    display:inline-block;
+    margin:5px;
+}
+
+#codeList{
+    vertical-align: top;
+    background-color:blue;
+    width:160px;
+    display:inline-block;
+    margin:3px;
+    min-height: 30px;
+
+}
+button{
+    vertical-align: top;
+
+    margin:5px
+}
+
+#dashBoard{
+    vertical-align: top;
+    width:100px;
+    text-align:center;
+    display:inline-block;
+    margin:5px;
+}
+
+#gameField{
+    background-color:grey;
+    width:450px;
+    display:inline-block;
+    margin:5px;
+    height: 450px;
+}
+
+#gridContainer{
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    text-align: center;
+
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    height: 149px;
+    font-size: 30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+#hh{        
+    transform: rotate(0deg);
+    position: absolute;
+    width:'35px'
+
+}
+
+.grass{
+    background-color: green;
+    border-radius: 20px;
+    margin: 2px;
+    
+}
+
+
+
+/* dropdown button */
+
+/* .dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  } */
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 40px;
+    overflow: auto;
+    box-shadow: 0px 8px 4px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 2px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
