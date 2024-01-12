@@ -2,6 +2,7 @@
 <html lang="uk">
     <head>
         <title>Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">  
         <script type="text/javascript" src="code.js" defer>
 
@@ -9,21 +10,41 @@
 
     </head>
     <body>
-        <div>
+        <dialog id="helpDialog">
+            <p id="helpText">Show help here</p>
+            <button autofocus id="closeDialog">Close</button>
+        </dialog>
+        <div id="mainDiv">
             <div id="wrapper">
                 <div id="cmdList">
                     <button onclick="onBtnFw(event,'')"id="btnFw">Вперед</button><br>
                     <button onclick="onBtnFw(event,'')"id="btnLeft">Повернути вліво</button><br>
-                    <button onclick="onBtnFw(event,'')"id="btnRight">Повернути вправо</button>
-                    <div class="dropdown">
+                    <button onclick="onBtnFw(event,'')"id="btnRight">Повернути вправо</button><br>
+                    <div class="dropdown" id="btnRepeat">
                         <button onclick="myFunction()" class="dropbtn">Повторити</button>
                         <div id="myDropdown" class="dropdown-content">
-                          <a href="#home" class="repeat">2</a>
-                          <a href="#about" class="repeat">3</a>
-                          <a href="#contact" class="repeat">4</a>
+                          <a href="#" class="repeat">2</a>
+                          <a href="#" class="repeat">3</a>
+                          <a href="#" class="repeat">4</a>
+                          <a href="#" class="repeat">5</a>
+                          <a href="#" class="repeat">6</a>
+                          <a href="#" class="repeat">7</a>
+                          <a href="#" class="repeat">8</a>
+                          <a href="#" class="repeat">9</a>
                         </div>
-                    </div>
-                    <button onclick="onBtnFw(event,'')"id="btnEndBlock">Кінець блоку</button>
+                    </div><br>
+                    <button onclick="onBtnFw(event,'')"id="btnEndBlock">Кінець блоку</button><br>
+                    <button onclick="onBtnFw(event,'')"id="pickUp">Підняти</button><br>
+                    <div class="dropdown" id="btnIf">
+                        <button onclick="myFunctionIf()" class="dropbtn">Якщо</button>
+                        <div id="myDropdownIf" class="dropdown-content">
+                          <a href="#" class="ifOperator">Яблуко</a>
+                          <a href="#" class="ifOperator">Камінь</a>
+                          <a href="#" class="ifOperator">Немає каменю</a>
+                         
+                        </div>
+                    </div><br>
+                    <button onclick="onBtnFw(event,'')" id="btnEndIf">Кінець Якщо</button><br>
 
                 </div>
 
@@ -31,31 +52,135 @@
                 
                 </div>
                 <div id="dashBoard">
-                    <button onclick="menu()">Menu</button>
-                    <button onclick="myMove()">Run</button>
-                    <button onclick="deleteCommand()">Delete</button>
-                    <button onclick="clearAll()">Clear All</button>
                     <h2 id="level"></h2>
+                    <button id ="helpBtn">-- ? --</button>
+                    <button onclick="menu()">Меню</button>
+                    <button onclick="myMove()">▶</button>
+                    <button onclick="deleteCommand()">⌫</button>
+                    <button onclick="clearAll()">🗑</button>
                 </div>    
 
                 <div id="gameField">
                     <div id = "gridContainer" >
-                        <div class="grid-item"><img id="hh" class="hedgehog" src="images/hedgehog_small.png">1</div>
-                        <div class="grid-item">2</div>
-                        <div class="grid-item">3</div>
-                        <div class="grid-item">4</div>
-                        <div class="grid-item">5</div>
-                        <div class="grid-item">6</div>
-                        <div class="grid-item">7</div>
-                        <div class="grid-item">8</div>
-                        <div class="grid-item">9</div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
                     </div>
                 </div>
             </div>
             <div id="menu">
-                <h1>Hedgehog</h1>
-                <button class="levelBtn">Level 1</button><br>
-                <button class="levelBtn">Level 2</button><br>
+                <h1>Їжачок</h1>
+                <h4>---- Лінійні алгоритми ----</h4>
+                <button class="levelBtn">Рівень 1</button><br>
+                <button class="levelBtn">Рівень 2</button><br>
+                <button class="levelBtn">Рівень 3</button><br>
+                <button class="levelBtn">Рівень 4</button><br>
+                <button class="levelBtn">Рівень 5</button><br>
+                <h4>---- Повторення ----</h4>
+                <button class="levelBtn">Рівень 6</button><br>
+                <button class="levelBtn">Рівень 7</button><br>
+                <button class="levelBtn">Рівень 8</button><br>
+                <button class="levelBtn">Рівень 9</button><br>
+                <button class="levelBtn">Рівень 10</button><br>
+                <h4>---- Вкладені повторення ----</h4>
+                <button class="levelBtn">Рівень 11</button><br>
+                <button class="levelBtn">Рівень 12</button><br>
+                <button class="levelBtn">Рівень 13</button><br>
+                <button class="levelBtn">Рівень 14</button><br>
+                <button class="levelBtn">Рівень 15</button><br>
+                <h4>---- Задачі з умовою ----</h4>
+                <button class="levelBtn">Рівень 16</button><br>
+                <button class="levelBtn">Рівень 17</button><br>
+                <button class="levelBtn">Рівень 18</button><br>
+                <button class="levelBtn">Рівень 19</button><br>
+                <button class="levelBtn">Рівень 20</button><br>
+
             </div>
         </div>
         
