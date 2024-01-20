@@ -1,0 +1,23 @@
+.levels__menu {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.levels__menu-inner {
+    margin: auto;
+}
+
+.levels__menu-title {
+    font-family:"Roboto", serif;
+}
+
+.menu_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.levelBtn {
+    height: 100%;
+    margin: 3px;
+    border-radius: 8px;
+}
