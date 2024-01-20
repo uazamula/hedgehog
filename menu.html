@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <title>Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/menu.css">  
+    </head>
+    <body>
+        <dialog id="helpDialog">
+            <p id="helpText">Show help here</p>
+            <button autofocus id="closeDialog">Close</button>
+        </dialog>
+        <main class="mainDiv">
+            <div id="wrapper">
+                <div id="cmdList">
+                    <button onclick="onBtnFw(event,'')"id="btnFw">Вперед</button><br>
+                    <button onclick="onBtnFw(event,'')"id="btnLeft">Повернути вліво</button><br>
+                    <button onclick="onBtnFw(event,'')"id="btnRight">Повернути вправо</button><br>
+                    <div class="dropdown" id="btnRepeat">
+                        <button onclick="myFunction()" class="dropbtn">Повторити</button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="#" class="repeat">2</a>
+                          <a href="#" class="repeat">3</a>
+                          <a href="#" class="repeat">4</a>
+                          <a href="#" class="repeat">5</a>
+                          <a href="#" class="repeat">6</a>
+                          <a href="#" class="repeat">7</a>
+                          <a href="#" class="repeat">8</a>
+                          <a href="#" class="repeat">9</a>
+                        </div>
+                    </div><br>
+                    <button onclick="onBtnFw(event,'')"id="btnEndBlock">Кінець блоку</button><br>
+                    <button onclick="onBtnFw(event,'')"id="pickUp">Підняти</button><br>
+                    <div class="dropdown" id="btnIf">
+                        <button onclick="myFunctionIf()" class="dropbtn">Якщо</button>
+                        <div id="myDropdownIf" class="dropdown-content">
+                          <a href="#" class="ifOperator">Яблуко</a>
+                          <a href="#" class="ifOperator">Камінь</a>
+                          <a href="#" class="ifOperator">Немає каменю</a>
+                         
+                        </div>
+                    </div><br>
+                    <button onclick="onBtnFw(event,'')" id="btnEndIf">Кінець Якщо</button><br>
+
+                </div>
+
+                <div id="codeList">
+
+                </div>
+                <div id="dashBoard">
+                    <h2 id="level"></h2>
+                    <button id ="helpBtn">-- ? --</button>
+                    <button onclick="menu()">Меню</button>
+                    <button onclick="myMove()">▶</button>
+                    <button onclick="deleteCommand()">⌫</button>
+                    <button onclick="clearAll()">🗑</button>
+                </div>    
+                <div data-include="game_field.partial.html"></div>
+            </div>
+
+            <div id="menu" class="levels__menu">
+                <div class="levels__menu-inner">
+                    <h1 class="levels__menu-title">Їжачок</h1>
+                    <h4>---- Лінійні алгоритми ----</h4>
+                    <div class="menu_grid">
+                        <button class="levelBtn">Рівень 1</button>
+                        <button class="levelBtn">Рівень 2</button>
+                        <button class="levelBtn">Рівень 3</button>
+                        <button class="levelBtn">Рівень 4</button>
+                        <button class="levelBtn">Рівень 5</button>
+                    </div>
+                    <h4>---- Повторення ----</h4>
+                    <div class="menu_grid">
+                        <button class="levelBtn">Рівень 6</button>
+                        <button class="levelBtn">Рівень 7</button>
+                        <button class="levelBtn">Рівень 8</button>
+                        <button class="levelBtn">Рівень 9</button>
+                        <button class="levelBtn">Рівень 10</button>    
+                    </div>
+                    <h4>---- Вкладені повторення ----</h4>
+                    <div class="menu_grid">
+                        <button class="levelBtn">Рівень 11</button>
+                        <button class="levelBtn">Рівень 12</button>
+                        <button class="levelBtn">Рівень 13</button>
+                        <button class="levelBtn">Рівень 14</button>
+                        <button class="levelBtn">Рівень 15</button>
+                    </div>
+                    <h4>---- Задачі з умовою ----</h4>
+                    <div class="menu_grid">
+                        <button class="levelBtn">Рівень 16</button>
+                        <button class="levelBtn">Рівень 17</button>
+                        <button class="levelBtn">Рівень 18</button>
+                        <button class="levelBtn">Рівень 19</button>
+                        <button class="levelBtn">Рівень 20</button>  
+                    </div>  
+                </div>
+
+            </div>
+
+        <script type="text/javascript" src="https://unpkg.com/html-data-include@3.3.3/html-data-include.js"></script>
+        <script type="text/javascript" src="js/code.js"></script>  
+    </body>
+</html>
