@@ -7,6 +7,7 @@
 }
 
 :root {
+  --menu-headline-color: rgba(21, 5, 5, 0.5);
   --headline-color: white;
   --background-color: #11151c;
   --text-color: rgba(255, 255, 255, 0.5);
@@ -35,9 +36,21 @@
   --how-to-get-contacts-bg-color: #787777;
 }
 
+body {
+  /* background-color:  #1f2021; */
+  background-color:#11151c;
+  color: var(--headline-color);
+}
 
 a {
   text-decoration: none;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
 }
 
 .container {
