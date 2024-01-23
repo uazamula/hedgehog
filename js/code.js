@@ -19,9 +19,9 @@ const STONE = "Камінь";
 const NO_STONE = "Немає каменю";
 const IF = "Якщо";
 const END_IF = "Кінець Якщо";
-const IF_CASE1 =45;
+const IF_CASE1 = 45;
 
-const settings= [
+const settings = [
   // 1
   {'solution':[FW,FW,FW],
   'squares': [11,12,13,14],
@@ -398,8 +398,8 @@ document.querySelectorAll('.repeat').forEach(a=>{
 document.querySelectorAll('.ifOperator').forEach(a=>{
   a.onclick = onBtnFw;
 })
-
 document.querySelectorAll('.levelBtn').forEach((e,i)=>{
+
   e.onclick=function(){
 
     divWrapper.style.display = 'block';
