@@ -16,8 +16,8 @@ let theta1 = 0;
 function updateScale() {
   let rect = canvasRect.getBoundingClientRect();
   
-  let startScrollPosition = window.pageYOffset + rect.top; 
-  let endScrollPosition = window.pageYOffset + rect.bottom;
+  let startScrollPosition = window.scrollY + rect.top; 
+  let endScrollPosition = window.scrollY + rect.bottom;
 
   if (targetScroll + window.innerHeight < startScrollPosition || targetScroll > endScrollPosition) {
      return;
@@ -39,7 +39,7 @@ function updateScale() {
 }
 
 window.addEventListener('scroll', () => {
-    targetScroll = window.pageYOffset;
+    targetScroll = window.scrollY;
     updateScale();
 });
 
