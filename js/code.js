@@ -1,4 +1,3 @@
-// 'use strict';
 window.onerror = function(message, url, line) {
     alert(`Error: ${message}\n${url}: ${line}`);
 };
@@ -22,10 +21,8 @@ const END_IF = "КІНЕЦЬ ЯКЩО";
 const IF_CASE1 = 45;
 
 const settings = [
-  // 1
   {'solution':[FW,FW,FW],
   'squares': [11,12,13,14],
-//  'buttonId':['btnFw','btnLeft'],
   'startAt': 11,
   'appleAt':undefined,
   'stoneAt':undefined,
@@ -43,7 +40,6 @@ const settings = [
    Увесь код можна очистити за допомогою кнопки 🗑'
   },
 
-  // 2 
   {'solution':[FW,FW,RIGHT,FW,FW],
   'squares': [47,38,29,30,31],
   'startAt': 47,
@@ -53,11 +49,9 @@ const settings = [
   'doorAt':[32],
   'degrees':-90,
   'ifCase':0,
-
   'help':'Використовуй команди "Вперед" та "Повернути вправо",\
   щоб дістатися дверей'},
 
-  // 3
   {'solution':[FW,FW,RIGHT,FW,LEFT,FW],
   'squares': [47,38,29,30,21],
   'startAt': 47,
@@ -67,11 +61,9 @@ const settings = [
   'doorAt':[12],
   'degrees':-90,
   'ifCase':0,
-
   'help':'Використовуй команди "Вперед" та "Повернути вправо",\
   щоб дістатися дверей, рухаючись по траві'},
 
-  // 4
   {'solution':[FW,FW,PICK_UP,FW,LEFT,FW],
   'squares': [24,23,22,21,30],
   'startAt': 24,
@@ -81,11 +73,9 @@ const settings = [
   'doorAt':[39],
   'degrees':180,
   'ifCase':0,
-
   'help':'Використовуй попередні команди і нову команду  "Підняти",\
   щоб підняти яблуко і доставити до дверей'},
 
-  // 5
   {'solution':[FW,RIGHT,FW,LEFT,FW,FW,LEFT,FW,RIGHT,FW],
   'squares': [10,11,12,13,14,20,21,22],
   'startAt': 10,
@@ -95,10 +85,8 @@ const settings = [
   'doorAt':[15],
   'degrees':0,
   'ifCase':0,
-
-  
   'help':'Допоможи їжачку дістатися дверей, оминаючи камінь.Рухатися по траві.'},
-  //6
+
   {'solution':[REPEAT+' 5',FW,ENDBLOCK],
   'squares': [11,12,13,14,15,16],
   'startAt': 11,
@@ -108,10 +96,8 @@ const settings = [
   'doorAt':[17],
   'degrees':0,
   'ifCase':0,
-
   'help':'Використовуй команду "Повторити", щоб зробити код коротшим. Після цієї команди використай команду "Вперед". Вибери потрібну кількість повторень.І не забудь в кінці поставити команду "Кінець блоку"'},
-//TODO
-  //7
+
   {'solution':[REPEAT+' 5',FW,ENDBLOCK,RIGHT,FW],
   'squares': [11,12,13,14,15,16,25],
   'startAt': 11,
@@ -121,12 +107,10 @@ const settings = [
   'doorAt':[34],
   'degrees':0,
   'ifCase':0,
-
   'help':'Використовуй команду "Повторити", щоб зробити код коротшим. \
   Після цієї команди використай команду "Вперед". \
   Вибери потрібну кількість повторень.І не забудь після команди "Кінець блоку" додати ще потрібні команди'},
 
-  // 8
   {'solution':[REPEAT+' 3',FW,RIGHT,FW,LEFT,ENDBLOCK,FW],
   'squares': [11,12,21,22,31,32,41,42],
   'startAt': 11,
@@ -136,11 +120,9 @@ const settings = [
   'doorAt':[43],
   'degrees':0,
   'ifCase':0,
-
   'help':'Використовуй команду "Повторити", щоб зробити код коротшим. \
   Всередині блоку повторення має бути вже декілька команд'},
 
-  // 9
   {'solution':[REPEAT+' 8',FW,ENDBLOCK,RIGHT,FW,FW,RIGHT,REPEAT+' 4',FW,ENDBLOCK],
   'squares': [10,11,12,13,14,15,16,17,18,27,36,35,34,33,32],
   'startAt': 10,
@@ -152,7 +134,7 @@ const settings = [
   'ifCase':0,
   'help':'Використовуй команду "Повторити" двічі. \
   Всередині кожного блоку повторення лише одна команда "Вперед"'},
-  // 10
+
   {'solution':[REPEAT+' 3',FW,LEFT,FW,RIGHT,ENDBLOCK, REPEAT+' 3',FW,RIGHT,FW,LEFT,ENDBLOCK],
   'squares': [37,38,29,30,21,22,13,14,23,24,33,34,43],
   'startAt': 37,
@@ -164,8 +146,7 @@ const settings = [
   'ifCase':0,
   'help':'Тут мають бути два цикли.\
   <br><br>За їх межами жодних команд'},
-    //Nested loops
-// 11
+
   {'solution':[REPEAT+' 3',REPEAT+' 7',FW,ENDBLOCK,RIGHT,ENDBLOCK],
   'squares': [1,2,3,4,5,6,7,8,17,26,35,44,53,62,71,70,69,68,67,66,65,64],
   'startAt': 1,
@@ -176,7 +157,7 @@ const settings = [
   'degrees':0,
   'ifCase':0,
   'help':'В блоці з повторенням всередині має бути ще один блок повторення і після цього вкладеного блоку ще одна команда. '},
-  // 12
+
   {'solution':[REPEAT+' 2',REPEAT+' 7',FW,ENDBLOCK,RIGHT,ENDBLOCK,FW],
   'squares': [1,2,3,4,5,6,7,8,17,26,35,44,53,62,71,70],
   'startAt': 1,
@@ -188,7 +169,6 @@ const settings = [
   'ifCase':0,
   'help':'Після зовнішнього блоку ще одна команда. '},
 
-  // 13
   {'solution':[REPEAT+' 3',REPEAT+' 7',FW,ENDBLOCK,RIGHT,ENDBLOCK,REPEAT+' 2',REPEAT+' 4',FW,ENDBLOCK,RIGHT,ENDBLOCK,],
   'squares': [1,2,3,4,5,6,7,8,17,26,35,44,53,62,71,70,69,68,67,66,65,64,55,46,37,28,29,30,31,32],
   'startAt': 1,
@@ -200,7 +180,6 @@ const settings = [
   'ifCase':0,
   'help':'Два вкладених цикли'},
 
-  // 14
   {'solution':[REPEAT+' 2',REPEAT+' 6',FW,ENDBLOCK,RIGHT,FW,FW,RIGHT,REPEAT+' 6',FW,ENDBLOCK,LEFT,FW,FW,LEFT,ENDBLOCK],
   'squares': [2,3,4,5,6,7,8,17,26,25,24,23,22,21,20,29,38,39,40,41,42,43,44,53,62,61,60,59,58,57,56,65,74],
   'startAt': 2,
@@ -211,7 +190,7 @@ const settings = [
   'degrees':0,
   'ifCase':0,
   'help':'У одному зовнішньому циклі два внутрішніх цикли.'},
-  // 15
+
   {'solution':[REPEAT+' 2',REPEAT+' 4',FW,FW,FW,LEFT,ENDBLOCK,LEFT,LEFT,ENDBLOCK],
   'squares': [5,6,7,8,17,26,35,34,33,32,31,30,29,38,47,56,57,58,59,50,41,23,14],
   'startAt': 32,
@@ -222,8 +201,7 @@ const settings = [
   'degrees':0,
   'ifCase':0,
   'help':'Обійти всі зелені квадратики і повернутися у вихідне положення. <br><br>Використовуй не більше одного вкладеного циклу.<br><br> Не використовуй команду "Повернути вправо".'},
-  //Conditions
-//16
+ 
   {'solution':[FW,IF+' '+APPLE,PICK_UP,END_IF,FW],
   'squares': [14,23,32],
   'startAt': 14,
@@ -232,10 +210,10 @@ const settings = [
   'questionAt':23,
   'doorAt':[41],
   'degrees':90,
-  'ifCase':1,//Випадок використання умовного оператора: відсутність/наявність яблука на позиції 'questionAt'
+  'ifCase':1,
   'help':'На шляху їжачка може лежати яблуко. Використовуй команду "Підняти" лише у випадку, якщо яблуко дійсно лежить на полі, позначеному знаком "?"\
   Для цього тицяй на "Якщо" і обирай "Яблуко". <br><br>Не забудь закрити блок команд (команду) з "Якщо" командою "Кінець Якщо". <br><br>Повторення не використовуй. '},
-  //17
+
   {'solution':[REPEAT+' 6',FW,IF+' '+APPLE,PICK_UP,END_IF,ENDBLOCK],
   'squares': [11,12,13,14,15,16,17],
   'startAt': 11,
@@ -244,9 +222,9 @@ const settings = [
   'questionAt':14,
   'doorAt':[18],
   'degrees':0,
-  'ifCase':1,// Apple on pathway
+  'ifCase':1,
   'help':'На шляху їжачка може лежати яблуко.Використовуй умову, яку вкладено у повторення'},
-  //18
+  
   {'solution':[IF+' '+STONE,RIGHT,FW,FW,LEFT,END_IF,IF+' '+NO_STONE,FW,FW,END_IF],
   'squares': [2,3,4,11,20],
   'startAt': 2,
@@ -255,11 +233,11 @@ const settings = [
   'questionAt':3,
   'doorAt':[5,21],
   'degrees':0,
-  'ifCase':2,// Stone on pathway
+  'ifCase':2,
   'help':'На шляху їжачка може лежати камінь. Використовуй умову "Якщо". Спочатку розглянь випадок, коли камінь є, а потім коли його немає.<br><br>\
    Не використовуй повторення.<br><br>\
    Їжачок має бути розвернутий у бік дверей'},
-  //19
+
   {'solution':[IF+' '+STONE,RIGHT,REPEAT+' 3',FW,FW,LEFT,ENDBLOCK,LEFT,LEFT,FW,FW,END_IF,IF+' '+NO_STONE,REPEAT+' 4',FW,ENDBLOCK,END_IF],
   'squares': [2,3,4,5,6,11,20,21,22,13],
   'startAt': 2,
@@ -268,12 +246,12 @@ const settings = [
   'questionAt':3,
   'doorAt':[7],
   'degrees':0,
-  'ifCase':2,// Stone on pathway
+  'ifCase':2,
   'help':'На коротшому шляху їжачка може лежати камінь. Використовуй умову "Якщо". Спочатку розглянь випадок, коли камінь є, а потім коли його немає.<br><br>\
    Використовуй повторення для мінімізації кількості рядків коду.<br><br> \
    Розворот виконуй вліво. <br><br>\
    Має бути 17 рядків коду'},
-  //20
+
   {'solution':[IF+' '+STONE,RIGHT,FW,FW,LEFT,END_IF,REPEAT+' 5',FW,ENDBLOCK],
   'squares': [2,3,4,5,6,7,11,20,21,22,23,24,25],
   'startAt': 2,
@@ -282,12 +260,12 @@ const settings = [
   'questionAt':3,
   'doorAt':[8,26],
   'degrees':0,
-  'ifCase':2,// Stone on pathway
+  'ifCase':2,
   'help':'На коротшому шляху їжачка може лежати камінь. Використувуй лише одну умову - якщо є камінь.<br><br> Використовуй повторення.'},
 
 ];
-// On Development stage
-///////////////////////
+
+
 let commands=[];
 settings.forEach(e=>commands.push([]));
 if (typeof localStorage.commands !== 'undefined')
@@ -301,7 +279,6 @@ if (typeof localStorage.success !== 'undefined')
 if (JSON.parse(localStorage.success).length<settings.length){
      localStorage.success = JSON.stringify(success);
    }
-///////////////////////
 
 getSuccess();
 
@@ -326,23 +303,15 @@ closeDialog.addEventListener("click",()=>{helpDialog.close()});
 
 var btn;
 
-// getData();
 function getData(){
-// if(window.location.pathname.split("/").pop()==='game.html'){
   if (typeof localStorage.commands !== 'undefined'){
-  //TODO save results for multiple levels
   commands = JSON.parse(localStorage.commands);
   console.log(commands)
   onReopen();
-  // }
 }}
 console.log('Storage =' + commands)
 
 function onReopen(){
-  //insert creation of buttons(code) when browser is opening
-    
-  //TODO add levelIndex to commands
-
   commands[levelIndex].forEach(command=>{
     insertCommand(command);
     btn.textContent=command;
@@ -350,7 +319,6 @@ function onReopen(){
   })
   
 }
-//localStorage.commands = JSON.stringify([[],[],[],[]]);
 function insertCommand(command){ 
     btn = document.createElement('button')
     if (command===ENDBLOCK || command===END_IF){
@@ -359,7 +327,6 @@ function insertCommand(command){
     }
     console.log('isBlock='+isBlock)
 
-   // if(isBlock)
     btn.style.marginLeft=5+isBlock*20+'px'
 
     var br = document.createElement('br')
@@ -441,10 +408,6 @@ document.querySelectorAll('.levelBtn').forEach((e,i)=>{
       stone.style.opacity=0;
 
     }
-
-
-    //settings[i]['startAt']-1
-
     getData();
     grid.forEach((e,i)=>{
       if (settings[levelIndex]['squares'].includes(i+1)){
@@ -480,7 +443,6 @@ document.querySelectorAll('.levelBtn').forEach((e,i)=>{
 
 function getSuccess(){
   if (typeof localStorage.success !== 'undefined'){
-    //TODO save results for multiple levels
     success = JSON.parse(localStorage.success);
   }
   
@@ -490,9 +452,6 @@ function getSuccess(){
 }
 
 function menu(){
-  // document.querySelector('#btnLeft').textContent='kghkg'
-  // console.log('khh')va
- 
   divWrapper.style.display = 'none';
   divMenu.style.display = 'block';
 
@@ -524,15 +483,12 @@ function menu(){
 }
 
 function deleteCommand(){
-  //TODO
   const command = commands[levelIndex].pop();
   var commandList =  document.querySelector('#codeList');
-  //remove button and br elements
   if (commandList.hasChildNodes()){
   commandList.removeChild(commandList.lastChild);}
   if (commandList.hasChildNodes()){
   commandList.removeChild(commandList.lastChild);}
-  //TODO
   localStorage.commands = JSON.stringify(commands)
 
   if (command===ENDBLOCK || command===END_IF){
@@ -546,12 +502,10 @@ function deleteCommand(){
 }
 
 function clearAll(){
-  /* видаляємо html elements and код */
   var list =  document.querySelector('#codeList');
   while (list.hasChildNodes()) {
     list.removeChild(list.firstChild);
   }
-  //TODO
   commands[levelIndex]=[]
   localStorage.commands = JSON.stringify(commands)          
   isBlock=0
@@ -597,12 +551,10 @@ function setDefaultPositions(save_pos_x,save_pos_y){
     document.getElementById('question').style.color='Black';}
 
   if(settings[levelIndex]['ifCase']===1){
-    // ifCase1(apple,'?');
     apple.style.opacity = 0;
     apple.style.left = 0;
   }
   if(settings[levelIndex]['ifCase']===2){
-    // ifCase1(apple,'?');
     stone.style.opacity = 0;
     stone.style.left = 0;
   }
@@ -688,14 +640,12 @@ function myMove() {
     clearInterval(id);
     id = setInterval(frame, delay); 
     function frame() {
-      //TODO
       let command = commands[levelIndex][index];
       let hh_pos=hedgehog.getBoundingClientRect();    
 
       if (commands[levelIndex].length===index || isCollide(hh_pos,stone_pos)) {      
         if (wait>=wait_seconds){
           setDefaultPositions(save_pos_x,save_pos_y);
-                    //TODO comparation commands.forEach(i,e=>{ solution[i]===e return });
           var message;
           if (JSON.stringify(settings[levelIndex]['solution'])===JSON.stringify(commands[levelIndex])){
             message = 'Вітаю! \u{1F603}';
@@ -719,7 +669,6 @@ function myMove() {
 
        
       } else {
-        //Here setup if operators by adding ||
 
         index=ifCase(index,IF+' '+APPLE,1,ifIsTrue);
         console.log('index=',index);
@@ -732,11 +681,9 @@ function myMove() {
         command = commands[levelIndex][index];
 
         if(command===PICK_UP){
-          // let hh_pos=hedgehog.getBoundingClientRect();    
         
           if (isCollide(hh_pos, apple_pos)){
             console.log('here remove')
-            //TODO add hh with apple at same position
 
             hedgehog.setAttribute('src',"images/hh_apple.png");
             apple.style.opacity = 0;
@@ -749,7 +696,6 @@ function myMove() {
         if(command===LEFT){
           degree-=90
         } 
-        //TODO
         if(command===RIGHT) {
           degree+=90
         }        
@@ -758,7 +704,6 @@ function myMove() {
           degree=0
         }
         console.log('size: '+ hedgehog.getAttribute('width'));
-        //TODO
         if (command===FW){
           pos_x+= 50 * Math.cos(degree*Math.PI/180); 
           pos_y+= 52 * Math.sin(degree*Math.PI/180); 
@@ -767,7 +712,6 @@ function myMove() {
           hedgehog.style.top = pos_y + "px"; 
         }  
         if (command.includes(REPEAT)){
-          //Only for numbers up to 9
           if (countRepeat===0){
             loop[0]=command.slice(-1);
             startBlockIndex[0]=index;   
@@ -783,7 +727,6 @@ function myMove() {
 
         }            
         index++;
-//TODO  
         if(command===ENDBLOCK){
           if ( loop[1]>1){
             loop[1]--;
@@ -805,14 +748,11 @@ function myMove() {
           }
 
         }
-      // }
       }
     }
   }
 
 
-
-//drop down
 function myFunction() {
   document.querySelector("#myDropdown").classList.toggle("show");
 }
@@ -820,7 +760,6 @@ function myFunction() {
 function myFunctionIf() {
   document.querySelector("#myDropdownIf").classList.toggle("show");
 }
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
