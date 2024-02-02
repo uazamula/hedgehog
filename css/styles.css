@@ -45,6 +45,7 @@ dialog {
 
 
 #gameField {
+  position: relative;
   opacity: 1;
   width: 450px;
   display: inline-block;
@@ -70,9 +71,10 @@ dialog {
 
 #hh {
   transform: rotate(0deg);
-  position: absolute;
+  position: fixed;
   width: 45px;
   z-index: 1;
+  transition: all 1s ease-in-out;
 }
 
 #apple {
@@ -90,19 +92,6 @@ dialog {
   border-radius: 10px;
   margin: 1px;
 }
-
-
-
-/* dropdown button */
-
-/* .dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  } */
 
 .dropbtn:hover,
 .dropbtn:focus {
