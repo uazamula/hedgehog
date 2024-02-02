@@ -289,7 +289,7 @@ let door;
 let door2;
 console.log(localStorage.commands+'Storage');
 
-var divCode = document.querySelector('#codeList');
+let divCode = document.querySelector('#codeList');
 const divWrapper =document.querySelector('#wrapper');
 const divMenu =document.querySelector('#menu');
 
@@ -301,7 +301,7 @@ const closeDialog = document.querySelector("#closeDialog");
 helpBtn.addEventListener("click",()=>{helpText.innerHTML=settings[levelIndex]['help'];helpDialog.showModal()});
 closeDialog.addEventListener("click",()=>{helpDialog.close()});
 
-var btn;
+let btn;
 
 function getData(){
   if (typeof localStorage.commands !== 'undefined'){
@@ -329,7 +329,7 @@ function insertCommand(command){
 
     btn.style.marginLeft=5+isBlock*20+'px'
 
-    var br = document.createElement('br')
+    let br = document.createElement('br')
     divCode.insertAdjacentElement('beforeend',btn)
     divCode.insertAdjacentElement('beforeend',br)
     
@@ -472,7 +472,7 @@ function menu(){
   let grid = document.querySelectorAll('.grass');
   grid.forEach((e,i)=>{e.classList.remove('grass')});
 
-  var list =  document.querySelector('#codeList');
+  let list =  document.querySelector('#codeList');
   while (list.hasChildNodes()) {
     list.removeChild(list.firstChild);
   }
@@ -484,7 +484,7 @@ function menu(){
 
 function deleteCommand(){
   const command = commands[levelIndex].pop();
-  var commandList =  document.querySelector('#codeList');
+  let commandList =  document.querySelector('#codeList');
   if (commandList.hasChildNodes()){
   commandList.removeChild(commandList.lastChild);}
   if (commandList.hasChildNodes()){
@@ -502,7 +502,7 @@ function deleteCommand(){
 }
 
 function clearAll(){
-  var list =  document.querySelector('#codeList');
+  let list =  document.querySelector('#codeList');
   while (list.hasChildNodes()) {
     list.removeChild(list.firstChild);
   }
@@ -623,10 +623,10 @@ function myMove() {
     let save_pos_y = pos_y
     console.log(save_pos_x,save_pos_y)
     console.log(hedgehog, pos_x, hedgehog.getAttribute('width') )
-    var degree=settings[levelIndex]['degrees']
-    var index=0;
+    let degree=settings[levelIndex]['degrees']
+    let index=0;
     const wait_seconds=0.5
-    var wait=0;
+    let wait=0;
     let loop = [1,1];
     let startBlockIndex=[-1,-1];
     let countRepeat=0;
@@ -646,7 +646,7 @@ function myMove() {
       if (commands[levelIndex].length===index || isCollide(hh_pos,stone_pos)) {      
         if (wait>=wait_seconds){
           setDefaultPositions(save_pos_x,save_pos_y);
-          var message;
+          let message;
           if (JSON.stringify(settings[levelIndex]['solution'])===JSON.stringify(commands[levelIndex])){
             message = 'Вітаю! \u{1F603}';
             success[levelIndex]='\u{1F603}';
@@ -762,10 +762,10 @@ function myFunctionIf() {
 }
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
     for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
+      let openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
       }
