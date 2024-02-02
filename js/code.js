@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 window.onerror = function(message, url, line) {
     alert(`Error: ${message}\n${url}: ${line}`);
 };
@@ -6,19 +6,19 @@ init();
 function init() {
 }
 
-const FW = "Вперед";
-const LEFT = "Повернути вліво";
-const RIGHT = "Повернути вправо";
-const REPEAT = "Повторити";
-const ENDBLOCK = "Кінець блоку";
-const PICK_UP = "Підняти";
+const FW = "ВПЕРЕД";
+const LEFT = "ПОВЕРНУТИ ВЛІВО";
+const RIGHT = "ПОВЕРНУТИ ВПРАВО";
+const REPEAT = "ПОВТОРИТИ";
+const ENDBLOCK = "КІНЕЦЬ БЛОКУ";
+const PICK_UP = "ПІДНЯТИ";
 const UP = "Вгору";
 const DOWN = "Вниз";
 const APPLE = "Яблуко";
 const STONE = "Камінь";
 const NO_STONE = "Немає каменю";
-const IF = "Якщо";
-const END_IF = "Кінець Якщо";
+const IF = "ЯКЩО";
+const END_IF = "КІНЕЦЬ ЯКЩО";
 const IF_CASE1 = 45;
 
 const settings = [
@@ -578,7 +578,7 @@ function resetImg(object, object_str){
     }        
   });
 }
-let hedgehog;
+let hedgehog = document.getElementById("hh");
 let apple;
 let stone;
 
@@ -833,7 +833,3 @@ window.onclick = function(event) {
     }
   }
 }  
-
-// document.addEventListener('DOMContentLoaded', function(){
-//     document.querySelector('#btnFw')=function(){button.onclick=onBtnFw();}
-// })
