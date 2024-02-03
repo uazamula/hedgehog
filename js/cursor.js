@@ -8,8 +8,8 @@ function draw() {
 
     stroke("#bdbdbd");
     strokeWeight(3);
-    for (var i = 0; i < width; i = i + 80) {
-        for (var j = 0; j < height; j = j + 80) {
+    for (let i = 0; i < width; i = i + 80) {
+        for (let j = 0; j < height; j = j + 80) {
             point(i, j);
         }
     }
@@ -18,8 +18,8 @@ function draw() {
 
     al.push(new Rays());
 
-    for (var i = 0; i < al.length; i++) {
-        var r = al[i];
+    for (let i = 0; i < al.length; i++) {
+        let r = al[i];
         r.applyForce(new p5.Vector(random(-0.5, 0.5), random(0.01, 0.05)));
         r.update();
         r.render();
@@ -50,7 +50,7 @@ Rays.prototype.update = function () {
 };
 
 Rays.prototype.render = function () {
-    var c = color("rgb(57, 102, 128, " + this.lifeSpan + ")");
+    let c = color("rgb(57, 102, 128, " + this.lifeSpan + ")");
     stroke(c);
     line(this.position.x, this.position.y, pmouseX, pmouseY);
 };
