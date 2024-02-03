@@ -13,12 +13,8 @@ const closeModal = () => {
 function attachModalEventListeners() {
     const openButton = document.getElementById("helpBtn");
     const closeButton = document.getElementById("closeModal");
-    openButton.addEventListener("click", () => {
-        openModal();
-    });
-    closeButton.addEventListener("click", () => {
-        closeModal();
-    });
+    openButton.addEventListener("click", () => {openModal()});
+    closeButton.addEventListener("click", () => {closeModal()});
 }
 
 attachModalEventListeners();
