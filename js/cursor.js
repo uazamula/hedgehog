@@ -59,3 +59,5 @@ Rays.prototype.isDead = function () {
     if (this.lifeSpan < 0.1) return true;
     else return false;
 };
+
+
