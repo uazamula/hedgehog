@@ -59,7 +59,7 @@ dialog {
 
 #hh {
     transform: rotate(0deg);
-    position: absolute;
+    position: fixed;
     width: 45px;
     z-index: 1;
     transition: all 1s ease-in-out;
@@ -183,8 +183,6 @@ dialog {
     color: var(--menu-button-hover-text-color);
 }
 
-
-
 @media (max-width: 992px) {
     .game_grid {
         display: grid;
@@ -196,27 +194,3 @@ dialog {
         margin: auto;
     }
 }
-
-.codeList {
-    margin-top: 15px;
-    vertical-align: top;
-    background-color: var(--codeList-bg-color);
-    min-width: 160px;
-    display: inline-block;
-    min-height: 200px;
-    max-height: 380px;
-    overflow: auto;
-    text-align: left;
-}
-
-/* .game_grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.game_grid-cmd {
-    max-width: 300px;
-    width: 100%;
-    margin: auto;
-    margin-top: 15px;
-} */
