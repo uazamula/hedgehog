@@ -11,9 +11,8 @@
     height: 100%;
     overflow: auto;
     opacity: 1;
-    transition: opacity .5s ease-out;
+    transition: opacity 0.5s ease-out;
     background-color: var(--help-modal-bg-color);
-
 }
 
 .helpModal__inner {
@@ -25,12 +24,11 @@
     margin: auto;
     border-radius: 3px;
     box-shadow: var(--help-modal-box-shadow);
-    transition: opacity .3s ease-out;
+    transition: opacity 0.3s ease-out;
     width: 329px;
     padding: 43px 32px 65px;
     text-align: center;
     background-color: var(--menu-headline-color);
-
 }
 .helpText {
     color: black;
@@ -38,7 +36,6 @@
     font-family: "Circular Std Bold", serif;
     font-weight: 700;
     margin-bottom: 11px;
-
 }
 
 .helpModal__close-btn {
@@ -49,8 +46,8 @@
     top: 16px;
     right: 24px;
     padding: 4px;
-    opacity: .8;
-    transition: opacity .2s ease-out;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-out;
     border: none;
 }
 
@@ -72,5 +69,3 @@
 .helpModal__close-btn:hover {
     opacity: 1;
 }
-
-
