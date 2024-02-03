@@ -438,19 +438,6 @@ let divCode = document.querySelector("#codeList");
 const divWrapper = document.querySelector("#wrapper");
 const divMenu = document.querySelector("#menu");
 
-const helpBtn = document.querySelector("#helpBtn");
-const helpDialog = document.querySelector("#helpDialog");
-const helpText = document.querySelector("#helpText");
-const closeDialog = document.querySelector("#closeDialog");
-
-helpBtn.addEventListener("click", () => {
-    helpText.innerHTML = settings[levelIndex]["help"];
-    helpDialog.showModal();
-});
-closeDialog.addEventListener("click", () => {
-    helpDialog.close();
-});
-
 let btn;
 
 function getData() {

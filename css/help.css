@@ -1,0 +1,76 @@
+.helpModal {
+    position: fixed;
+    display: none;
+    z-index: 9999;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    opacity: 1;
+    transition: opacity .5s ease-out;
+    background-color: var(--help-modal-bg-color);
+
+}
+
+.helpModal__inner {
+    z-index: 1;
+    background-color: var(--classic-white);
+    opacity: 1;
+    position: relative;
+    min-width: 344px;
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: var(--help-modal-box-shadow);
+    transition: opacity .3s ease-out;
+    width: 329px;
+    padding: 43px 32px 65px;
+    text-align: center;
+    background-color: var(--menu-headline-color);
+
+}
+.helpText {
+    color: black;
+    font-size: 18px;
+    font-family: "Circular Std Bold", serif;
+    font-weight: 700;
+    margin-bottom: 11px;
+
+}
+
+.helpModal__close-btn {
+    background: none;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 16px;
+    right: 24px;
+    padding: 4px;
+    opacity: .8;
+    transition: opacity .2s ease-out;
+    border: none;
+}
+
+.helpModal__close-btn::before,
+.helpModal__close-btn::after {
+    background-color: var(--help-modal-cross-color);
+    transform: rotate(-45deg);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+}
+
+.helpModal__close-btn::after {
+    transform: rotate(45deg);
+}
+
+.helpModal__close-btn:hover {
+    opacity: 1;
+}
+
+

@@ -145,6 +145,7 @@ dialog {
     min-height: 200px;
     max-height: 380px;
     overflow: auto;
+    text-align: left;
 }
 
 #level {
