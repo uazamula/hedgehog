@@ -15,11 +15,16 @@
     --classic-white: #fff;
     --help-modal-box-shadow: 0 1px 20px 0 rgba(100,110,130,0.16);
     --help-modal-cross-color: #282520;
+    --operator-repeat-bg-color: #3d50c0;
+    --operator-repeat-hover-bg-color: #596ddc;
+    --menu-button-text-color: #600551;
+    --menu-button-hover-bg-color: #2bceb3;
+    --menu-button-hover-text-color:#e3ecd2;
+    --codeList-bg-color: #2980b9;
+
 
     font-family: "Roboto", sans-serif;
     scroll-behavior: smooth;
-    --order-call-modal-massage-bg-color: #fff;
-    --order-call-modal-status-color: #f98250;
 }
 
 body {
@@ -37,6 +42,10 @@ canvas {
     top: 0;
     left: 0;
     z-index: -10;
+}
+
+button {
+    border: none;
 }
 
 .container {

@@ -41,6 +41,7 @@ dialog {
 }
 
 #gridContainer {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(9, 50px);
     text-align: center;
@@ -58,7 +59,7 @@ dialog {
 
 #hh {
     transform: rotate(0deg);
-    position: fixed;
+    position: absolute;
     width: 45px;
     z-index: 1;
     transition: all 1s ease-in-out;
@@ -139,7 +140,7 @@ dialog {
 .codeList {
     margin-top: 15px;
     vertical-align: top;
-    background-color: #2980b9;
+    background-color: var(--codeList-bg-color);
     min-width: 160px;
     display: inline-block;
     min-height: 200px;
@@ -159,7 +160,63 @@ dialog {
 
 .ifOperator,
 .repeat {
-    background-color: #3d50c0;
+    background-color: var(--operator-repeat-bg-color);
     width: 240px;
     height: 30px;
 }
+
+.ifOperator:hover,
+.repeat:hover {
+    background-color: var(--operator-repeat-hover-bg-color);
+}
+
+.menu_cnt {
+    width: 100px;
+    height: 30px;
+    position: relative;
+    color: var(--menu-button-text-color);
+    border: none;
+}
+
+.menu_cnt:hover {
+    background-color: var(--menu-button-hover-bg-color);
+    color: var(--menu-button-hover-text-color);
+}
+
+
+
+@media (max-width: 992px) {
+    .game_grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .codeList {
+        margin-top: 0;
+        width: 70%;
+        margin: auto;
+    }
+}
+
+.codeList {
+    margin-top: 15px;
+    vertical-align: top;
+    background-color: var(--codeList-bg-color);
+    min-width: 160px;
+    display: inline-block;
+    min-height: 200px;
+    max-height: 380px;
+    overflow: auto;
+    text-align: left;
+}
+
+/* .game_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.game_grid-cmd {
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+    margin-top: 15px;
+} */

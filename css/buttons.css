@@ -208,18 +208,6 @@ a {
     transform: translateX(49%);
 }
 
-.menu_cnt {
-    width: 100px;
-    height: 30px;
-    position: relative;
-    color: #600551;
-}
-
-.menu_cnt:hover {
-    background-color: #2bceb3;
-    color: #e3ecd2;
-}
-
 .btn-3 {
     border-color: #48a1c1;
     color: #48a1c1;
