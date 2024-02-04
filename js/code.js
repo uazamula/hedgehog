@@ -432,7 +432,6 @@ let levelIndex = 0;
 let isBlock = 0;
 let door;
 let door2;
-console.log(localStorage.commands + "Storage");
 
 let divCode = document.querySelector("#codeList");
 const divWrapper = document.querySelector("#wrapper");
@@ -443,11 +442,9 @@ let btn;
 function getData() {
     if (typeof localStorage.commands !== "undefined") {
         commands = JSON.parse(localStorage.commands);
-        console.log(commands);
         onReopen();
     }
 }
-console.log("Storage =" + commands);
 
 function onReopen() {
     commands[levelIndex].forEach((command) => {
@@ -460,7 +457,6 @@ function insertCommand(command) {
     if (command === ENDBLOCK || command === END_IF) {
         if (isBlock > 0) isBlock -= 1;
     }
-    console.log("isBlock=" + isBlock);
 
     btn.style.marginLeft = 5 + isBlock * 20 + "px";
 
@@ -470,7 +466,6 @@ function insertCommand(command) {
 
     if (command.includes(REPEAT) || command.slice(0, 4) === IF) {
         isBlock += 1;
-        console.log("isBlock=" + isBlock);
     }
 }
 
@@ -489,8 +484,6 @@ function onBtnFw(e, text = REPEAT + " ") {
     commands[levelIndex].push(btn.textContent);
     localStorage.commands = JSON.stringify(commands);
 
-    console.log(commands);
-    console.log(levelIndex);
 }
 
 document.querySelectorAll(".repeat").forEach((a) => {
@@ -514,7 +507,6 @@ document.querySelectorAll(".levelBtn").forEach((e, i) => {
         let apple = document.createElement("img");
         apple.setAttribute("src", "images/apple.png");
         apple.setAttribute("id", "apple");
-        console.log("create" + apple);
 
         let stone = document.createElement("img");
         stone.setAttribute("src", "images/stone.png");
@@ -614,7 +606,6 @@ function menu() {
     while (list.hasChildNodes()) {
         list.removeChild(list.firstChild);
     }
-    console.log(commands);
     isBlock = 0;
 }
 
@@ -745,7 +736,6 @@ function myMove() {
         }
     }
 
-    console.log(apple + "apple");
     let apple_pos = apple.getBoundingClientRect();
     let stone_pos = stone.getBoundingClientRect();
     hedgehog.style.transform = "rotate(0deg)";
@@ -756,8 +746,6 @@ function myMove() {
 
     let save_pos_x = pos_x;
     let save_pos_y = pos_y;
-    console.log(save_pos_x, save_pos_y);
-    console.log(hedgehog, pos_x, hedgehog.getAttribute("width"));
     let degree = settings[levelIndex]["degrees"];
     let index = 0;
     const wait_seconds = 0.5;
@@ -798,23 +786,17 @@ function myMove() {
                 clearInterval(id);
             } else {
                 wait += delay / 1000;
-                console.log(wait + " wait");
             }
-            console.log(hedgehog.getBoundingClientRect().left);
         } else {
             index = ifCase(index, IF + " " + APPLE, 1, ifIsTrue);
-            console.log("index=", index);
 
             index = ifCase(index, IF + " " + STONE, 2, ifIsTrue);
-            console.log("index=", index, " command=", command);
 
             index = ifCase(index, IF + " " + NO_STONE, 2, !ifIsTrue);
-            console.log("index=", index, " command=", command);
             command = commands[levelIndex][index];
 
             if (command === PICK_UP) {
                 if (isCollide(hh_pos, apple_pos)) {
-                    console.log("here remove");
 
                     hedgehog.setAttribute("src", "images/hh_apple.png");
                     apple.style.opacity = 0;
@@ -834,7 +816,6 @@ function myMove() {
             if (degree ** 2 === 360 ** 2) {
                 degree = 0;
             }
-            console.log("size: " + hedgehog.getAttribute("width"));
             if (command === FW) {
                 pos_x += 50 * Math.cos((degree * Math.PI) / 180);
                 pos_y += 52 * Math.sin((degree * Math.PI) / 180);
